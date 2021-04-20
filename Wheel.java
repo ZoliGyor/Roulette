@@ -1,24 +1,25 @@
 public class Wheel {
-    private String[] numbers = new String[38];
+    private Number[] numbers = new Number[38];
 
     public Wheel()
     {
-        numbers[0] = "0";
-        numbers[1] = "00";
+        numbers[0] = new Number("0", Colour.GREEN);
+        numbers[1] = new Number("00", Colour.GREEN);
         for(int i = 2; i < numbers.length; i++){
-            numbers[i] = String.valueOf(i-1);
+            if(i == 2 || i == 4 || i == 6 || i == 8 || i == 10 || i == 13 || i == 15 || i == 17 || i == 19 || i == 22 || i == 24 || i == 26 || i == 28 ||
+            i == 29 || i == 31 || i == 33 || i == 35 || i == 37){
+                numbers[i] = new Number(String.valueOf(i-1), Colour.RED);
+            }else{
+                numbers[i] = new Number(String.valueOf(i-1), Colour.BLACK);
+            }
         }
     }
 
     public void printOutNumbers()
     {
         for(int i = 0; i < numbers.length; i++){
-            System.out.println(numbers[i]);
+            System.out.println("The number: " + numbers[i].getValue() + " and its colour: " + numbers[i].getColour());
         }
     }
 
-    public String[] getNumbers()
-    {
-        return numbers;
-    }
 }

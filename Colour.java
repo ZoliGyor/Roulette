@@ -1,5 +1,5 @@
 public enum Colour {
-    BLACK;
-    GREEN;
+    BLACK,
+    GREEN,
     RED;
 }
