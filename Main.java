@@ -25,7 +25,7 @@ public class Main {
                 }else{
                     player.setCash(player.getCash() - currentBet);
                     System.out.println("What would you like to bet on? \nTo bet on a single number write: single\nTo bet on low numbers (1-18) write: low");
-                    System.out.println("To bet on high numbers (19-38) write: high\nTo bet on Red numbers write: red\nTo bet on black numbers write: balck");
+                    System.out.println("To bet on high numbers (19-38) write: high\nTo bet on Red numbers write: red\nTo bet on black numbers write: black");
                     System.out.println("To bet on even numbers write: even\nTo bet on odd numbers write odd");
                     input = scanner.nextLine();
                     if(input.equals("single")){
@@ -48,6 +48,22 @@ public class Main {
                     }else if(input.equals("high")){
                         Integer numberAfterTheRoll = Integer.valueOf(roulette.rollTheWheelForNumbers());
                         if(numberAfterTheRoll > 18){
+                            System.out.println("Congratulations! You won 2 times the amount of your bet! This means: " + (currentBet*2) + " pounds");
+                            player.setCash(player.getCash() + (currentBet*2));
+                        }else{
+                            System.out.println("Awwww, you lost this round");
+                        }
+                    }else if(input.equals("red")){
+                        Colour colourAfterTheRoll = roulette.rollTheWheelForColours();
+                        if(colourAfterTheRoll == Colour.RED){
+                            System.out.println("Congratulations! You won 2 times the amount of your bet! This means: " + (currentBet*2) + " pounds");
+                            player.setCash(player.getCash() + (currentBet*2));
+                        }else{
+                            System.out.println("Awwww, you lost this round");
+                        }
+                    }else if(input.equals("black")){
+                        Colour colourAfterTheRoll = roulette.rollTheWheelForColours();
+                        if(colourAfterTheRoll == Colour.BLACK){
                             System.out.println("Congratulations! You won 2 times the amount of your bet! This means: " + (currentBet*2) + " pounds");
                             player.setCash(player.getCash() + (currentBet*2));
                         }else{
