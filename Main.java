@@ -69,6 +69,22 @@ public class Main {
                         }else{
                             System.out.println("Awwww, you lost this round");
                         }
+                    }else if(input.equals("even")){
+                        Integer numberAfterTheRoll = Integer.valueOf(roulette.rollTheWheelForNumbers());
+                        if(numberAfterTheRoll % 2 == 0){
+                            System.out.println("Congratulations! You won 2 times the amount of your bet! This means: " + (currentBet*2) + " pounds");
+                            player.setCash(player.getCash() + (currentBet*2));
+                        }else{
+                            System.out.println("Awwww, you lost this round");
+                        }
+                    }else if(input.equals("odd")){
+                        Integer numberAfterTheRoll = Integer.valueOf(roulette.rollTheWheelForNumbers());
+                        if(numberAfterTheRoll % 2 == 1){
+                            System.out.println("Congratulations! You won 2 times the amount of your bet! This means: " + (currentBet*2) + " pounds");
+                            player.setCash(player.getCash() + (currentBet*2));
+                        }else{
+                            System.out.println("Awwww, you lost this round");
+                        }
                     }
                     if(player.getCash() <= 0){
                         System.out.println("Awwww, it looks like you don't have any money left...Well do make sure to come back next time!");
