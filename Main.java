@@ -28,9 +28,17 @@ public class Main {
                 if(input.equals("single")){
                     System.out.println("What number would you like to choose?");
                     input = scanner.nextLine();
-                    if(input.equals(roulette.rollTheWheel())){
+                    if(input.equals(roulette.rollTheWheelForNumbers())){
                         System.out.println("Congratulations! You won 35 times the amount of your bet! This means: " + (currentBet*35) + " pounds");
                         player.setCash(player.getCash() + (currentBet*35));
+                    }else{
+                        System.out.println("Awwww, you lost this round");
+                    }
+                }else if(input.equals("low")){
+                    Integer numberAfterTheRoll = Integer.valueOf(roulette.rollTheWheelForNumbers());
+                    if(numberAfterTheRoll < 18 && numberAfterTheRoll > 0){
+                        System.out.println("Congratulations! You won 2 times the amount of your bet! This means: " + (currentBet*2) + " pounds");
+                        player.setCash(player.getCash() + (currentBet*2));
                     }else{
                         System.out.println("Awwww, you lost this round");
                     }

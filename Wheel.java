@@ -24,13 +24,22 @@ public class Wheel {
         }
     }
 
-    public String rollTheWheel()
+    public String rollTheWheelForNumbers()
     {
         Random random = new Random();
         int randomNumber = random.nextInt(numbers.length);
         System.out.println("Rolling the wheel...");
         System.out.println("And the ball landed on: " + numbers[randomNumber].getValue() + " which has the colour of: " + numbers[randomNumber].getColour());
         return numbers[randomNumber].getValue(); 
+    }
+
+    public Colour rollTheWheelForColours()
+    {
+        Random random = new Random();
+        int randomNumber = random.nextInt(numbers.length);
+        System.out.println("Rolling the wheel...");
+        System.out.println("And the ball landed on: " + numbers[randomNumber].getValue() + " which has the colour of: " + numbers[randomNumber].getColour());
+        return numbers[randomNumber].getColour(); 
     }
 
 }
