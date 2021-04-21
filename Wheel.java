@@ -24,12 +24,13 @@ public class Wheel {
         }
     }
 
-    public void rollTheWheel()
+    public String rollTheWheel()
     {
         Random random = new Random();
         int randomNumber = random.nextInt(numbers.length);
         System.out.println("Rolling the wheel...");
         System.out.println("And the ball landed on: " + numbers[randomNumber].getValue() + " which has the colour of: " + numbers[randomNumber].getColour());
+        return numbers[randomNumber].getValue(); 
     }
 
 }
